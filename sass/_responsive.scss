@@ -1,0 +1,159 @@
+@media(max-width:767px) {
+    .section-01 {
+        background: url(../images/mobile/image-header.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .section-inner {
+            padding: 1em;
+            .menu {
+                position: absolute;
+                width: 85%;
+                padding: 1.5em 0em;
+                margin: 3em auto;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                transition: all 250ms ease-in-out;
+                background: $White;
+                .li-item {
+                    margin-bottom: 1em;
+                    a {
+                        margin-left: 0;
+                        color: $darkGrayishBlue;
+                        font-size: 1rem;
+                    }
+                }
+                .btn {
+                    margin: 0;
+                    background-color: $Yellow;
+                    a {
+                        color: black;
+                    }
+                }
+                &::after {
+                    content: '';
+                    background: $White;
+                    height: 25px;
+                    width: 25px;
+                    position: absolute;
+                    top: -24px;
+                    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+                    right: 0;
+                }
+            }
+            .menuBtn {
+                display: flex;
+            }
+        }
+    }
+    .hide {
+        opacity: 0;
+    }
+    .main-content {
+        top: 35%;
+    }
+    .heading {
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+    }
+    .photo-grid {
+        flex-direction: column-reverse;
+        text-align: center;
+        .description {
+            width: 100%;
+            .para-title {
+                font-size: 1.8rem;
+                padding: 2em 0.5em 1em 0.5em;
+            }
+            .para-para {
+                font-size: 1rem;
+                padding: 0em 1em 2em 1em;
+            }
+            .para-link {
+                font-size: 1rem;
+                padding-bottom: 4em;
+            }
+        }
+        .photo {
+            width: 100%;
+            background-size: cover;
+        }
+    }
+    .photo-transform {
+        background: url(../images/mobile/image-transform.jpg);
+    }
+    .photo-stand {
+        background: url(../images/mobile/image-stand-out.jpg);
+    }
+    .photo-transform,
+    .photo-stand {
+        width: 100vw;
+        height: 50vh;
+        background-size: cover;
+    }
+    .section-04 {
+        flex-direction: column;
+        .photo-with-detail {
+            width: 100%;
+            .container {
+                padding-top: 14em;
+                padding-right: 1em;
+                padding-left: 1em;
+                .photo-title {
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+                .photo-description {
+                    padding: 0em;
+                }
+            }
+        }
+        .graphic {
+            background: url(../images/mobile/image-graphic-design.jpg);
+            background-position: center center;
+            background-size: cover;
+        }
+        .photography {
+            background: url(../images/mobile/image-photography.jpg);
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+    .section-05 {
+        .testimonials-container {
+            .testimonial-heading {
+                font-size: 1.2rem;
+            }
+            .testimonials {
+                flex-direction: column;
+                .testimonial {
+                    padding-top: 3em;
+                    .designation {
+                        margin-bottom: 2em;
+                    }
+                }
+            }
+        }
+    }
+    .section-06 {
+        grid-template-columns: repeat(2, 50%);
+        height: 65vh;
+        .bottle {
+            background: url(../images/mobile/image-gallery-milkbottles.jpg);
+            background-size: cover;
+        }
+        .orange {
+            background: url(../images/mobile/image-gallery-orange.jpg);
+            background-size: cover;
+        }
+        .cone {
+            background: url(../images/mobile/image-gallery-cone.jpg);
+            background-size: cover;
+        }
+        .pinkCubes {
+            background: url(../images/mobile/image-gallery-sugar-cubes.jpg);
+            background-size: cover;
+        }
+    }
+}
