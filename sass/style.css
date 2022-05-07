@@ -86,6 +86,10 @@ a {
 .main-content {
   position: relative;
   top: 25%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  -webkit-transform: translate(0em);
+          transform: translate(0em);
 }
 
 .heading {
@@ -154,13 +158,40 @@ a {
 
 .photo-grid .description .para-link {
   font-size: 1.2rem;
-  padding: 0em 4em 6em 3em;
+  margin: 0em 4em 6em 3em;
   font-family: "Fraunces", serif;
   font-weight: 700;
+  position: relative;
 }
 
 .photo-grid .description .para-link a {
   color: #23303e;
+}
+
+.photo-grid .description .para-link a::after {
+  content: '';
+  width: 25%;
+  height: 10px;
+  left: 0%;
+  z-index: -1;
+  bottom: 0;
+  border-radius: 10px;
+  opacity: 0.4;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  position: absolute;
+}
+
+.photo-grid .description .para-link a:hover::after {
+  opacity: 0.7;
+}
+
+.photo-grid .description .para-link .trans::after {
+  background-color: #fad400;
+}
+
+.photo-grid .description .para-link .stand::after {
+  background-color: #fe7867;
 }
 
 .photo-grid .photo {
@@ -420,14 +451,22 @@ a {
   color: white;
 }
 
-.footer .sm-icons svg {
+.footer .sm-icons {
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .sm-icons .svg-holder {
   margin-top: 3em;
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
 
-.footer .sm-icons svg:hover path {
-  background: white;
+.footer .sm-icons:hover svg {
+  fill: white;
 }
 
 @media (max-width: 767px) {
@@ -475,10 +514,10 @@ a {
     background: white;
     height: 25px;
     width: 25px;
-    position: absolute;
-    top: -24px;
     -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
             clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    position: absolute;
+    top: -24px;
     right: 0;
   }
   .section-01 .section-inner .menuBtn {
@@ -516,7 +555,18 @@ a {
   }
   .photo-grid .description .para-link {
     font-size: 1rem;
-    padding-bottom: 4em;
+    margin-bottom: 4em;
+  }
+  .photo-grid .description .para-link a::after {
+    content: '';
+    width: 55%;
+    border-radius: 10px;
+    height: 10px;
+    bottom: 0;
+    z-index: -1;
+    left: 22%;
+    position: absolute;
+    background-color: #fe7867;
   }
   .photo-grid .photo {
     width: 100%;
@@ -566,7 +616,7 @@ a {
     background-size: cover;
   }
   .section-05 .testimonials-container .testimonial-heading {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .section-05 .testimonials-container .testimonials {
     -webkit-box-orient: vertical;

@@ -68,6 +68,8 @@ a {
 .main-content {
     position: relative;
     top: 25%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transform: translate(0em);
 }
 
 .heading {
@@ -116,11 +118,39 @@ a {
         }
         .para-link {
             font-size: 1.2rem;
-            padding: 0em 4em 6em 3em;
+            margin: 0em 4em 6em 3em;
             font-family: $heading;
             font-weight: 700;
+            position: relative;
             a {
                 color: $veryDarkDesaturatedBlue;
+                &::after {
+                    content: '';
+                    width: 25%;
+                    height: 10px;
+                    left: 0%;
+                    z-index: -1;
+                    bottom: 0;
+                    border-radius: 10px;
+                    opacity: 0.4;
+                    transition: all 250ms ease-in-out;
+                    position: absolute;
+                }
+                &:hover {
+                    &::after {
+                        opacity: 0.7;
+                    }
+                }
+            }
+            .trans {
+                &::after {
+                    background-color: $Yellow;
+                }
+            }
+            .stand {
+                &::after {
+                    background-color: $softRed;
+                }
             }
         }
     }
@@ -307,14 +337,16 @@ a {
         }
     }
     .sm-icons {
-        svg {
+        transition: all 250ms ease-in-out;
+        display: flex;
+        .svg-holder {
             margin-top: 3em;
             margin-right: 0.5em;
             margin-left: 0.5em;
-            &:hover {
-                path {
-                    background: white;
-                }
+        }
+        &:hover {
+            svg {
+                fill: white;
             }
         }
     }

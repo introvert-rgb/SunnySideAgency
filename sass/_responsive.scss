@@ -36,9 +36,9 @@
                     background: $White;
                     height: 25px;
                     width: 25px;
+                    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
                     position: absolute;
                     top: -24px;
-                    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
                     right: 0;
                 }
             }
@@ -72,7 +72,20 @@
             }
             .para-link {
                 font-size: 1rem;
-                padding-bottom: 4em;
+                margin-bottom: 4em;
+                a {
+                    &::after {
+                        content: '';
+                        width: 55%;
+                        border-radius: 10px;
+                        height: 10px;
+                        bottom: 0;
+                        z-index: -1;
+                        left: 22%;
+                        position: absolute;
+                        background-color: #fe7867;
+                    }
+                }
             }
         }
         .photo {
@@ -123,7 +136,7 @@
     .section-05 {
         .testimonials-container {
             .testimonial-heading {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             .testimonials {
                 flex-direction: column;
